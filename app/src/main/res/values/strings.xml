@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AndroQuiz</string>
-    <string name="usernameText">Username</string>
-    <string name="passwordText">Password</string>
-    <string name="logInButtonText">LogIn</string>
-    <string name="welcomeText">Welcome to AndroQuiz!</string>
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="login_button_text">LogIn</string>
+    <string name="welcome_text">Welcome to AndroQuiz!</string>
 </resources>
