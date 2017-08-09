@@ -2,4 +2,6 @@
     <string name="app_name">AndroQuiz</string>
     <string name="usernameText">Username</string>
     <string name="passwordText">Password</string>
+    <string name="logInButtonText">LogIn</string>
+    <string name="welcomeText">Welcome to AndroQuiz!</string>
 </resources>
