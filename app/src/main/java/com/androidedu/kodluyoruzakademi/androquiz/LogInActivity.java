@@ -28,12 +28,11 @@ public class LogInActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        Intent intentUserName = new Intent(LogInActivity.this, QuestionsActivity.class);
-                        intentUserName.putExtra("usernameSet", userNameEntered.getText().toString());
-                        startActivity(intentUserName);
+                        Intent intent = new Intent(LogInActivity.this, QuestionsActivity.class);
 
-                        Intent intentButtonClick = new Intent(LogInActivity.this, QuestionsActivity.class);
-                        startActivity(intentButtonClick);
+                        intent.putExtra("usernameSet", userNameEntered.getText().toString());
+
+                        startActivity(intent);
                     }
                 }
         );
