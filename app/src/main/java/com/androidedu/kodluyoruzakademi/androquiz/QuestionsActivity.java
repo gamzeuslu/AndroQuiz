@@ -1,5 +1,6 @@
 package com.androidedu.kodluyoruzakademi.androquiz;
 
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,10 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
         setContentView(R.layout.activity_questions);
 
         TextView view = (TextView) findViewById(usernameRetrieved);
-        view.setText("Kullanıcı: " + getIntent().getExtras().getString("usernameSet"));
+        Resources res = getResources();
+        view.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
+
+
 
     }
 
