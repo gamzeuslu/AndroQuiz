@@ -20,9 +20,6 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
         TextView view = (TextView) findViewById(usernameRetrieved);
         Resources res = getResources();
         view.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
-
-
-
     }
 
     @Override
