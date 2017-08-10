@@ -1,14 +1,18 @@
 <resources>
     <string name="app_name">AndroQuiz</string>
-    <string name="username_text">Username</string>
-    <string name="password_text">Password</string>
-    <string name="login_button_text">LogIn</string>
-    <string name="welcome_text">Welcome to AndroQuiz!</string>
-    <string name="username_hint_text">Sadece alfa-numerik karakter giriniz</string>
+    <string name="username_text">Kullanıcı adı</string>
+    <string name="password_text">Parola</string>
+    <string name="login_button_text">Giriş Yap</string>
+    <string name="welcome_text">AndroQuiz\'e Hoş Geldiniz!</string>
+    <string name="username_hint_text"><font size="12">Sadece alfa-numerik karakter giriniz</font></string>
     <string name="title_activity_answers">AnswersActivity</string>
     <string name="title_activity_questions">QuestionsActivity</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="question_number">Soru %d</string>
+    <string name="question_text">%s</string>
+    <string name="continue_button_text">Devam</string>
+    <string name="optionA_radio">%1s</string>
+    <string name="optionB_radio">%2s</string>
+    <string name="optionC_radio">%3s</string>
+    <string name="optionD_radio">%4s</string>
 
 </resources>
