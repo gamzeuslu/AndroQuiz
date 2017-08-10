@@ -4,4 +4,8 @@
     <string name="password_text">Password</string>
     <string name="login_button_text">LogIn</string>
     <string name="welcome_text">Welcome to AndroQuiz!</string>
+    <string name="username_hint_text">Sadece alfa-numerik karakter giriniz</string>
+    <string name="title_activity_answers">AnswersActivity</string>
+    <string name="title_activity_questions">QuestionsActivity</string>
+
 </resources>
