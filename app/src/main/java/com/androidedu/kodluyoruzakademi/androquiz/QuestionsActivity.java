@@ -20,6 +20,8 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
         TextView view = (TextView) findViewById(usernameRetrieved);
         Resources res = getResources();
         view.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
+
+
     }
 
     @Override
@@ -61,4 +63,16 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+    /*public String[] questions = {
+            getString(R.string.question_1),
+            "question two",
+            "questions three",
+            "question four",
+            "question five",
+            "question six",
+            "question seven",
+            "question eight",
+            "questions nine",
+            "question ten"};*/
 }

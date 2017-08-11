@@ -1,12 +1,14 @@
 package com.androidedu.kodluyoruzakademi.androquiz;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -63,8 +65,17 @@ public class QuestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_question, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_question, container, false);
+        TextView questionNumber = view.findViewById(R.id.questionNumber);
+        TextView questionText = view.findViewById(R.id.questionText);
+
+        Resources res = getResources();
+        questionNumber.setText(res.getString(R.string.question_number, 1));
+        questionText.setText(res.getString(R.string.question_1));
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

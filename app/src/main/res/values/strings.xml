@@ -16,4 +16,14 @@
     <string name="optionC_radio">C) %1$s</string>
     <string name="optionD_radio">D) %1$s</string>
 
+
+    <!-- Questions and Answer options -->
+
+
+    <string name="question_1">this is question one</string>
+    <string name="question_2">this is question two</string>
+    <string name="question_3">this is question three</string>
+    <!--view.setText(res.getString(R.string.question_1));-->
+
+
 </resources>
