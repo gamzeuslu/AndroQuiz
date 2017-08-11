@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -60,6 +61,7 @@ public class QuestionFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -74,6 +76,8 @@ public class QuestionFragment extends Fragment {
         TextView optionBText = view.findViewById(R.id.optionB);
         TextView optionCText = view.findViewById(R.id.optionC);
         TextView optionDText = view.findViewById(R.id.optionD);
+
+        Button continueButton = view.findViewById(R.id.continueButton);
 
         int questionNumberInt = 1;
         Resources res = getResources();

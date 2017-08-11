@@ -26,6 +26,7 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
 
     @Override
     protected void onRestart() {
+
         super.onRestart();
     }
 

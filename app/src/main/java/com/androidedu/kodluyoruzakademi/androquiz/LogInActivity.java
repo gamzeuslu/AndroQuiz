@@ -19,10 +19,9 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
 
         final EditText userNameEntered = (EditText) findViewById(R.id.usernameEditText);
-        Button clickLogInButton = (Button) findViewById(R.id.logInButton);
+        Button LogInButton = (Button) findViewById(R.id.logInButton);
 
-
-        clickLogInButton.setOnClickListener(
+        LogInButton.setOnClickListener(
                 new View.OnClickListener() {
 
                     @Override
