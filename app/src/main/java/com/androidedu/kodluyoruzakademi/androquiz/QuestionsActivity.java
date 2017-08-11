@@ -64,8 +64,8 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
 
     }
 
-    /*public String[] questions = {
-            getString(R.string.question_1),
+    public String[] questions = {
+            "question one",
             "question two",
             "questions three",
             "question four",
@@ -74,5 +74,5 @@ public class QuestionsActivity extends AppCompatActivity implements QuestionFrag
             "question seven",
             "question eight",
             "questions nine",
-            "question ten"};*/
+            "question ten"};
 }
