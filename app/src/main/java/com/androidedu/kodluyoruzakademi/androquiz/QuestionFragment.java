@@ -69,10 +69,10 @@ public class QuestionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_question, container, false);
         TextView questionNumber = view.findViewById(R.id.questionNumber);
         TextView questionText = view.findViewById(R.id.questionText);
-
+        int questionNumberInt = 1;
         Resources res = getResources();
-        questionNumber.setText(res.getString(R.string.question_number, 1));
-        questionText.setText(res.getString(R.string.question_1));
+        questionNumber.setText(res.getString(R.string.question_number, questionNumberInt));
+        questionText.setText(res.getStringArray(R.array.questions)[0]);
 
 
         return view;

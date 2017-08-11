@@ -24,7 +24,18 @@
     <string name="question_2">this is question two</string>
     <string name="question_3">this is question three</string>
 
-
+    <string-array name="questions">
+        <item>this is question one</item>
+        <item>this is question two</item>
+        <item>this is question three</item>
+        <item>this is question four</item>
+        <item>this is question five</item>
+        <item>this is question six</item>
+        <item>this is question seven</item>
+        <item>this is question eight</item>
+        <item>this is question nine</item>
+        <item>this is question ten</item>
+    </string-array>
 
 
 </resources>
