@@ -67,12 +67,23 @@ public class QuestionFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_question, container, false);
+
         TextView questionNumber = view.findViewById(R.id.questionNumber);
         TextView questionText = view.findViewById(R.id.questionText);
+        TextView optionAText = view.findViewById(R.id.optionA);
+        TextView optionBText = view.findViewById(R.id.optionB);
+        TextView optionCText = view.findViewById(R.id.optionC);
+        TextView optionDText = view.findViewById(R.id.optionD);
+
         int questionNumberInt = 1;
         Resources res = getResources();
+
         questionNumber.setText(res.getString(R.string.question_number, questionNumberInt));
         questionText.setText(res.getStringArray(R.array.questions)[0]);
+        optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[0]));
+        optionBText.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[0]));
+        optionCText.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[0]));
+        optionDText.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[0]));
 
 
         return view;

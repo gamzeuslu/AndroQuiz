@@ -16,25 +16,40 @@
     <string name="optionC_radio">C) %1$s</string>
     <string name="optionD_radio">D) %1$s</string>
 
-
-    <!-- Questions and Answer options -->
-
-
-    <string name="question_1">this is question one</string>
-    <string name="question_2">this is question two</string>
-    <string name="question_3">this is question three</string>
-
     <string-array name="questions">
-        <item>this is question one</item>
-        <item>this is question two</item>
-        <item>this is question three</item>
-        <item>this is question four</item>
-        <item>this is question five</item>
-        <item>this is question six</item>
-        <item>this is question seven</item>
-        <item>this is question eight</item>
-        <item>this is question nine</item>
-        <item>this is question ten</item>
+        <item>birinci soru</item>
+        <item>ikinci soru</item>
+        <item>üçüncü soru</item>
+        <item>dördüncü soru</item>
+        <item>beşinci soru</item>
+    </string-array>
+    <string-array name="optionA">
+        <item>birinci sorunun a şıkkı</item>
+        <item>ikinci sorunun a şıkkı</item>
+        <item>üçüncü sorunun a şıkkı</item>
+        <item>dördüncü sorunun a şıkkı</item>
+        <item>beşinci sorunun a şıkkı</item>
+    </string-array>
+    <string-array name="optionB">
+        <item>birinci sorunun b şıkkı</item>
+        <item>ikinci sorunun b şıkkı</item>
+        <item>üçüncü sorunun b şıkkı</item>
+        <item>dördüncü sorunun b şıkkı</item>
+        <item>beşinci sorunun b şıkkı</item>
+    </string-array>
+    <string-array name="optionC">
+        <item>birinci sorunun c şıkkı</item>
+        <item>ikinci sorunun c şıkkı</item>
+        <item>üçüncü sorunun c şıkkı</item>
+        <item>dördüncü sorunun c şıkkı</item>
+        <item>beşinci sorunun c şıkkı</item>
+    </string-array>
+    <string-array name="optionD">
+        <item>birinci sorunun d şıkkı</item>
+        <item>ikinci sorunun d şıkkı</item>
+        <item>üçüncü sorunun d şıkkı</item>
+        <item>dördüncü sorunun d şıkkı</item>
+        <item>beşinci sorunun d şıkkı</item>
     </string-array>
 
 
