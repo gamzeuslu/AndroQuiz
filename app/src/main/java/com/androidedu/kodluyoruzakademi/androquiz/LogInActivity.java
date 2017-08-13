@@ -3,6 +3,8 @@ package com.androidedu.kodluyoruzakademi.androquiz;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +18,22 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     EditText userNameEntered;
     Button logInButton;
     Intent intentLogIn;
+    TextWatcher usernameWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            if (userNameEntered.getText().toString().length() != 0)
+                logInButton.setEnabled(true);
+        }
+
+        public void afterTextChanged(Editable s) {
+
+
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +41,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_log_in);
 
         userNameEntered = (EditText) findViewById(R.id.usernameEditText);
+        userNameEntered.addTextChangedListener(usernameWatcher);
         logInButton = (Button) findViewById(R.id.logInButton);
-
-
         logInButton.setOnClickListener(this);
 
     }
@@ -71,9 +88,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
         intentLogIn = new Intent(LogInActivity.this, QuestionsActivity.class);
 
-        intentLogIn.putExtra("usernameSet", userNameEntered.getText().toString());
+        intentLogIn.putExtra("username", userNameEntered.getText().toString());
 
         startActivity(intentLogIn);
 
+
     }
+
 }

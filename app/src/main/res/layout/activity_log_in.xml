@@ -48,10 +48,12 @@
         android:layout_marginStart="19dp"
         android:layout_toEndOf="@+id/usernameText"
         android:layout_toRightOf="@+id/usernameText"
+        android:digits="ABCÇDEFGHIİJKLMNOPQRSŞTUÜVWXYZabcçdefgğhıijklmnopqrsştuüvwxyz"
         android:ems="10"
         android:gravity="start"
         android:hint="@string/username_hint_text"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:maxLength="20" />
 
     <EditText
         android:id="@+id/passwordEditText"
@@ -74,6 +76,7 @@
         android:layout_alignRight="@+id/introduction"
         android:layout_below="@+id/passwordEditText"
         android:layout_marginTop="100dp"
+        android:enabled="false"
         android:text="@string/login_button_text" />
 
 </RelativeLayout>

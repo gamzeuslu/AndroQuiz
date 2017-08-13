@@ -11,14 +11,19 @@ import android.widget.TextView;
 
 public class AnswersActivity extends AppCompatActivity {
 
+    TextView username;
+    Resources res;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers);
 
-        TextView showUsernameAnswers = (TextView) findViewById(R.id.usernameRetrieved);
-        Resources res = getResources();
-        showUsernameAnswers.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
+        username = (TextView) findViewById(R.id.answersUsernameRetrieved);
+        res = getResources();
+
+        username.setText(res.getString(R.string.username, getIntent().getExtras().getString("username")));
+
     }
 
     @Override

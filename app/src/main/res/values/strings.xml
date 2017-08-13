@@ -4,7 +4,7 @@
     <string name="password_text">Parola</string>
     <string name="login_button_text">Giriş Yap</string>
     <string name="welcome_text">AndroQuiz\'e Hoş Geldiniz!</string>
-    <string name="username_hint_text"><font size="12">Sadece alfa-numerik karakter giriniz</font></string>
+    <string name="username_hint_text"><font size="12">Sadece harf kullanın.</font></string>
     <string name="title_activity_answers">AnswersActivity</string>
     <string name="title_activity_questions">QuestionsActivity</string>
     <string name="username"><font size="16">Kullanıcı: %1$s</font></string>

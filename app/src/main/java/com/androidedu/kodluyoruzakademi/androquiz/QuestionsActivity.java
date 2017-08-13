@@ -16,7 +16,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
     int clickCounter;
 
-    TextView showUsernameQuestions;
+    TextView username;
     TextView questionNumber;
     TextView questionText;
     TextView optionAText;
@@ -39,7 +39,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
         clickCounter = 0;
 
-        showUsernameQuestions = (TextView) findViewById(R.id.usernameRetrieved);
+        username = (TextView) findViewById(R.id.questionsUsernameRetrieved);
         questionNumber = (TextView) findViewById(R.id.questionNumber);
         questionText = (TextView) findViewById(R.id.questionText);
         optionAText = (TextView) findViewById(R.id.optionA);
@@ -57,9 +57,12 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
         res = getResources();
 
-        showUsernameQuestions.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
+        username.setText(res.getString(R.string.username, getIntent().getExtras().getString("username")));
+
         questionNumber.setText(res.getString(R.string.question_number, clickCounter+1));
+
         questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
+
         optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
         optionBText.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
         optionCText.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
@@ -106,13 +109,13 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
+
         switch (view.getId())
         {
             case R.id.continueButton:
 
                 if(clickCounter < 3) {
                     clickCounter++;
-                    showUsernameQuestions.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
                     questionNumber.setText(res.getString(R.string.question_number, clickCounter+1));
                     questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
                     optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
@@ -123,7 +126,6 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
                 else if(clickCounter == 3) {
                     clickCounter++;
-                    showUsernameQuestions.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
                     questionNumber.setText(res.getString(R.string.question_number, clickCounter+1));
                     questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
                     optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
@@ -141,6 +143,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
             case R.id.submitButton:
 
                 intentQuestions = new Intent(QuestionsActivity.this, AnswersActivity.class);
+                intentQuestions.putExtra("username", getIntent().getExtras().getString("username"));
                 startActivity(intentQuestions);
 
                 break;

@@ -6,7 +6,7 @@
     tools:context="com.androidedu.kodluyoruzakademi.androquiz.AnswersActivity">
 
     <TextView
-        android:id="@+id/usernameRetrieved"
+        android:id="@+id/answersUsernameRetrieved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
