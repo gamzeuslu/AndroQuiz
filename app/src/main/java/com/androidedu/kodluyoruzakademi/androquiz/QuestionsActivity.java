@@ -17,6 +17,7 @@ import android.widget.TextView;
 public class QuestionsActivity extends AppCompatActivity implements View.OnClickListener {
 
     int clickCounter;
+    int selectedOptionId;
 
     TextView username;
     TextView questionNumber;
@@ -31,6 +32,8 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
     Button continueButton;
     Button submitButton;
+
+    AnswerSheet answerSheet;
 
     Resources res;
 
@@ -66,6 +69,8 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
         submitButton = (Button) findViewById(R.id.submitButton);
         submitButton.setOnClickListener(this);
         submitButton.setVisibility(View.GONE);
+
+        answerSheet = new AnswerSheet();
 
         res = getResources();
 
@@ -124,6 +129,9 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
         switch (view.getId()) {
             case R.id.continueButton:
+
+                selectedOptionId = options.getCheckedRadioButtonId();
+                answerSheet.setAnswers(selectedOptionId, clickCounter);
 
                 options.clearCheck();
                 continueButton.setEnabled(false);
