@@ -10,15 +10,17 @@ import android.widget.Button;
 import android.widget.EditText;
 
 /**
-* First Activity class where users log-in to the quiz.
-*/
+ * First Activity class where users log-in to the quiz.
+ */
 
 public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText userNameEntered;
     Button logInButton;
     Intent intentLogIn;
+
     TextWatcher usernameWatcher = new TextWatcher() {
+
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
         }
@@ -30,13 +32,13 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
         public void afterTextChanged(Editable s) {
 
-
         }
 
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
@@ -49,25 +51,30 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onRestart() {
+
         super.onRestart();
+
     }
 
     @Override
     protected void onStart() {
 
         super.onStart();
+
     }
 
     @Override
     protected void onResume() {
 
         super.onResume();
+
     }
 
     @Override
     protected void onPause() {
 
         super.onPause();
+
     }
 
     @Override
@@ -91,8 +98,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         intentLogIn.putExtra("username", userNameEntered.getText().toString());
 
         startActivity(intentLogIn);
-
-
     }
 
 }

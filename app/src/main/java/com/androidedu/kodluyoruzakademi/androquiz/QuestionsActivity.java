@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 /**
@@ -19,10 +21,13 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
     TextView username;
     TextView questionNumber;
     TextView questionText;
-    TextView optionAText;
-    TextView optionBText;
-    TextView optionCText;
-    TextView optionDText;
+
+    RadioGroup options;
+
+    RadioButton optionA;
+    RadioButton optionB;
+    RadioButton optionC;
+    RadioButton optionD;
 
     Button continueButton;
     Button submitButton;
@@ -42,10 +47,17 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
         username = (TextView) findViewById(R.id.questionsUsernameRetrieved);
         questionNumber = (TextView) findViewById(R.id.questionNumber);
         questionText = (TextView) findViewById(R.id.questionText);
-        optionAText = (TextView) findViewById(R.id.optionA);
-        optionBText = (TextView) findViewById(R.id.optionB);
-        optionCText = (TextView) findViewById(R.id.optionC);
-        optionDText = (TextView) findViewById(R.id.optionD);
+
+        options = (RadioGroup) findViewById(R.id.radioGroup);
+
+        optionA = (RadioButton) findViewById(R.id.optionA);
+        optionA.setOnClickListener(this);
+        optionB = (RadioButton) findViewById(R.id.optionB);
+        optionB.setOnClickListener(this);
+        optionC = (RadioButton) findViewById(R.id.optionC);
+        optionC.setOnClickListener(this);
+        optionD = (RadioButton) findViewById(R.id.optionD);
+        optionD.setOnClickListener(this);
 
         continueButton = (Button) findViewById(R.id.continueButton);
         continueButton.setOnClickListener(this);
@@ -59,14 +71,14 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
         username.setText(res.getString(R.string.username, getIntent().getExtras().getString("username")));
 
-        questionNumber.setText(res.getString(R.string.question_number, clickCounter+1));
+        questionNumber.setText(res.getString(R.string.question_number, clickCounter + 1));
 
         questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
 
-        optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
-        optionBText.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
-        optionCText.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
-        optionDText.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[clickCounter]));
+        optionA.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
+        optionB.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
+        optionC.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
+        optionD.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[clickCounter]));
 
     }
 
@@ -110,28 +122,27 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
 
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.continueButton:
 
-                if(clickCounter < 3) {
-                    clickCounter++;
-                    questionNumber.setText(res.getString(R.string.question_number, clickCounter+1));
-                    questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
-                    optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
-                    optionBText.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
-                    optionCText.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
-                    optionDText.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[clickCounter]));
-                }
+                options.clearCheck();
 
-                else if(clickCounter == 3) {
+                if (clickCounter < 3) {
                     clickCounter++;
-                    questionNumber.setText(res.getString(R.string.question_number, clickCounter+1));
+                    questionNumber.setText(res.getString(R.string.question_number, clickCounter + 1));
                     questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
-                    optionAText.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
-                    optionBText.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
-                    optionCText.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
-                    optionDText.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[clickCounter]));
+                    optionA.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
+                    optionB.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
+                    optionC.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
+                    optionD.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[clickCounter]));
+                } else if (clickCounter == 3) {
+                    clickCounter++;
+                    questionNumber.setText(res.getString(R.string.question_number, clickCounter + 1));
+                    questionText.setText(res.getStringArray(R.array.questions)[clickCounter]);
+                    optionA.setText(res.getString(R.string.optionA_radio, res.getStringArray(R.array.optionA)[clickCounter]));
+                    optionB.setText(res.getString(R.string.optionB_radio, res.getStringArray(R.array.optionB)[clickCounter]));
+                    optionC.setText(res.getString(R.string.optionC_radio, res.getStringArray(R.array.optionC)[clickCounter]));
+                    optionD.setText(res.getString(R.string.optionD_radio, res.getStringArray(R.array.optionD)[clickCounter]));
 
                     continueButton.setVisibility(View.GONE);
                     submitButton.setVisibility(View.VISIBLE);
@@ -147,6 +158,20 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intentQuestions);
 
                 break;
+
+            case R.id.optionA:
+
+            case R.id.optionB:
+
+            case R.id.optionC:
+
+            case R.id.optionD:
+
+                continueButton.setEnabled(true);
+
+                break;
+
+
         }
     }
 }

@@ -17,7 +17,7 @@
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginStart="@dimen/fab_margin"
         android:layout_marginTop="@dimen/fab_margin"
-        android:text="@string/username"/>
+        android:text="@string/username" />
 
     <TextView
         android:id="@+id/questionNumber"
@@ -26,7 +26,7 @@
         android:layout_below="@+id/questionsUsernameRetrieved"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginStart="@dimen/fab_margin"
-        android:text="@string/question_number"/>
+        android:text="@string/question_number" />
 
     <TextView
         android:id="@+id/questionText"
@@ -37,51 +37,56 @@
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginStart="@dimen/fab_margin"
         android:layout_marginTop="@dimen/fab_margin"
-        android:text="@string/question_text"/>
+        android:text="@string/question_text" />
 
-    <RadioButton
-        android:id="@+id/optionA"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/questionText"
+        android:layout_alignStart="@+id/questionText"
         android:layout_below="@+id/questionText"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:checked="false"
-        android:text="@string/optionA_radio"/>
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="18dp">
 
-    <RadioButton
-        android:id="@+id/optionB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/optionA"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:checked="false"
-        android:text="@string/optionB_radio"/>
+        <RadioButton
+            android:id="@+id/optionA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/optionA_radio" />
 
-    <RadioButton
-        android:id="@+id/optionC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/optionB"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:checked="false"
-        android:text="@string/optionC_radio"/>
+        <RadioButton
+            android:id="@+id/optionB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/optionB_radio" />
 
-    <RadioButton
-        android:id="@+id/optionD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/optionC"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginStart="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:checked="false"
-        android:text="@string/optionD_radio"/>
+        <RadioButton
+            android:id="@+id/optionC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/optionC_radio" />
+
+        <RadioButton
+            android:id="@+id/optionD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginStart="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:text="@string/optionD_radio" />
+
+    </RadioGroup>
 
 
     <Button
@@ -92,8 +97,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
-        android:enabled="true"
+        android:enabled="false"
         android:text="@string/continue_button_text" />
 
     <Button
@@ -104,8 +110,10 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:enabled="true"
         android:text="@string/submit_button_text" />
+
 
 </RelativeLayout>
