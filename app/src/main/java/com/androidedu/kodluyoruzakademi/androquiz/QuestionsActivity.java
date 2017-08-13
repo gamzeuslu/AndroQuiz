@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/**
+ * Second Activity class where users go through the quiz.
+ */
 
 public class QuestionsActivity extends AppCompatActivity implements View.OnClickListener {
 

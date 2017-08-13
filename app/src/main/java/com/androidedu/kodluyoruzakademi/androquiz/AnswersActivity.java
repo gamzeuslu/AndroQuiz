@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+/**
+ * Third Activity class where users check their answers.
+ */
+
 public class AnswersActivity extends AppCompatActivity {
 
     @Override
