@@ -29,12 +29,12 @@
 
     <TextView
         android:id="@+id/userAnswers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/userAnswersTitle"
-        android:layout_alignRight="@+id/userAnswersTitle"
+        android:layout_width="350dp"
+        android:layout_height="250dp"
         android:layout_below="@+id/userAnswersTitle"
-        android:layout_marginTop="67dp"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
         android:text="@string/answersRetrieved" />
 
 </RelativeLayout>

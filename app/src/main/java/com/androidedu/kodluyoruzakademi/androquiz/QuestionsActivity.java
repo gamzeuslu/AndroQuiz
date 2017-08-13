@@ -19,6 +19,9 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
     int clickCounter;
     int selectedOptionId;
 
+    TextView selectedOption;
+    String selectedOptionText;
+
     TextView username;
     TextView questionNumber;
     TextView questionText;
@@ -131,7 +134,9 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
             case R.id.continueButton:
 
                 selectedOptionId = options.getCheckedRadioButtonId();
-                answerSheet.setAnswers(selectedOptionId, clickCounter);
+                selectedOption = (TextView) findViewById(selectedOptionId);
+                selectedOptionText = selectedOption.getText().toString();
+                answerSheet.setAnswers(selectedOptionText, clickCounter);
 
                 options.clearCheck();
                 continueButton.setEnabled(false);
@@ -161,6 +166,11 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.submitButton:
+
+                selectedOptionId = options.getCheckedRadioButtonId();
+                selectedOption = (TextView) findViewById(selectedOptionId);
+                selectedOptionText = selectedOption.getText().toString();
+                answerSheet.setAnswers(selectedOptionText, clickCounter);
 
                 intentQuestions = new Intent(QuestionsActivity.this, AnswersActivity.class);
                 intentQuestions.putExtra("username", getIntent().getExtras().getString("username"));

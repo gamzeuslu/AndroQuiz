@@ -9,10 +9,10 @@ import java.util.Arrays;
 
 public class AnswerSheet {
 
-    private static int[] answerSheet = new int[5];
+    private static String[] answerSheet = new String[5];
 
 
-    public void setAnswers(int answer, int question) {
+    public void setAnswers(String answer, int question) {
 
         answerSheet[question] = answer;
 
@@ -22,5 +22,11 @@ public class AnswerSheet {
 
         return Arrays.toString(answerSheet);
     }
+
+    public boolean checkAnswer() {
+        return false;
+    }
+
+
 
 }
