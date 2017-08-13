@@ -11,30 +11,22 @@ import android.widget.EditText;
 * First Activity class where users log-in to the quiz.
 */
 
-public class LogInActivity extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
+
+    EditText userNameEntered;
+    Button logInButton;
+    Intent intentLogIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        final EditText userNameEntered = (EditText) findViewById(R.id.usernameEditText);
-        Button LogInButton = (Button) findViewById(R.id.logInButton);
+        userNameEntered = (EditText) findViewById(R.id.usernameEditText);
+        logInButton = (Button) findViewById(R.id.logInButton);
 
-        LogInButton.setOnClickListener(
-                new View.OnClickListener() {
 
-                    @Override
-                    public void onClick(View view) {
-
-                        Intent intent = new Intent(LogInActivity.this, QuestionsActivity.class);
-
-                        intent.putExtra("usernameSet", userNameEntered.getText().toString());
-
-                        startActivity(intent);
-                    }
-                }
-        );
+        logInButton.setOnClickListener(this);
 
     }
 
@@ -74,4 +66,14 @@ public class LogInActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+
+        intentLogIn = new Intent(LogInActivity.this, QuestionsActivity.class);
+
+        intentLogIn.putExtra("usernameSet", userNameEntered.getText().toString());
+
+        startActivity(intentLogIn);
+
+    }
 }

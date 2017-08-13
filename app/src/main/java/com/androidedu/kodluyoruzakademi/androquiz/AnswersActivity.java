@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import static com.androidedu.kodluyoruzakademi.androquiz.R.id.usernameRetrieved;
-
 public class AnswersActivity extends AppCompatActivity {
 
     @Override
@@ -14,9 +12,9 @@ public class AnswersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answers);
 
-        TextView view = (TextView) findViewById(usernameRetrieved);
+        TextView showUsernameAnswers = (TextView) findViewById(R.id.usernameRetrieved);
         Resources res = getResources();
-        view.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
+        showUsernameAnswers.setText(res.getString(R.string.username, getIntent().getExtras().getString("usernameSet")));
     }
 
     @Override
@@ -53,5 +51,4 @@ public class AnswersActivity extends AppCompatActivity {
 
         super.onDestroy();
     }
-
 }
