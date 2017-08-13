@@ -12,6 +12,11 @@ import android.widget.TextView;
 public class AnswersActivity extends AppCompatActivity {
 
     TextView username;
+    TextView answerTitle;
+    TextView answersRetrieved;
+
+    AnswerSheet answerSheet;
+
     Resources res;
 
     @Override
@@ -20,9 +25,17 @@ public class AnswersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_answers);
 
         username = (TextView) findViewById(R.id.answersUsernameRetrieved);
+        answerTitle = (TextView) findViewById(R.id.userAnswersTitle);
+        answersRetrieved = (TextView) findViewById(R.id.userAnswers);
+
+        answerSheet = new AnswerSheet();
+
         res = getResources();
 
         username.setText(res.getString(R.string.username, getIntent().getExtras().getString("username")));
+        answerTitle.setText(res.getString(R.string.user_answers_title));
+        answersRetrieved.setText(res.getString(R.string.answersRetrieved, answerSheet.getAnswers()));
+
 
     }
 

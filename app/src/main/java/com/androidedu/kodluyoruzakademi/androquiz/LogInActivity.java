@@ -15,18 +15,18 @@ import android.widget.EditText;
 
 public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText userNameEntered;
+    EditText usernameEntered;
+    EditText passwordEntered;
     Button logInButton;
     Intent intentLogIn;
-
-    TextWatcher usernameWatcher = new TextWatcher() {
+    TextWatcher textWatcher = new TextWatcher() {
 
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            if (userNameEntered.getText().toString().length() != 0)
+            if (usernameEntered.getText().toString().length() != 0 && passwordEntered.getText().toString().length() != 0)
                 logInButton.setEnabled(true);
         }
 
@@ -42,8 +42,10 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        userNameEntered = (EditText) findViewById(R.id.usernameEditText);
-        userNameEntered.addTextChangedListener(usernameWatcher);
+        usernameEntered = (EditText) findViewById(R.id.usernameEditText);
+        usernameEntered.addTextChangedListener(textWatcher);
+        passwordEntered = (EditText) findViewById(R.id.passwordEditText);
+        passwordEntered.addTextChangedListener(textWatcher);
         logInButton = (Button) findViewById(R.id.logInButton);
         logInButton.setOnClickListener(this);
 
@@ -89,13 +91,12 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         super.onDestroy();
     }
 
-
     @Override
     public void onClick(View view) {
 
         intentLogIn = new Intent(LogInActivity.this, QuestionsActivity.class);
 
-        intentLogIn.putExtra("username", userNameEntered.getText().toString());
+        intentLogIn.putExtra("username", usernameEntered.getText().toString());
 
         startActivity(intentLogIn);
     }

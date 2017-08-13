@@ -126,6 +126,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
             case R.id.continueButton:
 
                 options.clearCheck();
+                continueButton.setEnabled(false);
 
                 if (clickCounter < 3) {
                     clickCounter++;

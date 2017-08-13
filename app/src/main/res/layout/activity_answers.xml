@@ -17,4 +17,24 @@
         android:layout_marginTop="14dp"
         android:text="@string/username" />
 
+    <TextView
+        android:id="@+id/userAnswersTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/answersUsernameRetrieved"
+        android:layout_alignStart="@+id/answersUsernameRetrieved"
+        android:layout_below="@+id/answersUsernameRetrieved"
+        android:layout_marginTop="47dp"
+        android:text="@string/user_answers_title" />
+
+    <TextView
+        android:id="@+id/userAnswers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/userAnswersTitle"
+        android:layout_alignRight="@+id/userAnswersTitle"
+        android:layout_below="@+id/userAnswersTitle"
+        android:layout_marginTop="67dp"
+        android:text="@string/answersRetrieved" />
+
 </RelativeLayout>

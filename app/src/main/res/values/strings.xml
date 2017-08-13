@@ -2,7 +2,7 @@
     <string name="app_name">AndroQuiz</string>
     <string name="username_text">Kullanıcı adı</string>
     <string name="password_text">Parola</string>
-    <string name="login_button_text">Giriş Yap</string>
+    <string name="login_button_text">Giriş</string>
     <string name="welcome_text">AndroQuiz\'e Hoş Geldiniz!</string>
     <string name="username_hint_text"><font size="12">Sadece harf kullanın.</font></string>
     <string name="title_activity_answers">AnswersActivity</string>
@@ -16,6 +16,8 @@
     <string name="optionC_radio">C) %1$s</string>
     <string name="optionD_radio">D) %1$s</string>
     <string name="submit_button_text">Gönder</string>
+    <string name="user_answers_title">Cevaplar</string>
+    <string name="answersRetrieved">%1$s</string>
 
     <string-array name="questions">
         <item>birinci soru</item>
