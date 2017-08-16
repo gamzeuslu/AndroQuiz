@@ -16,23 +16,18 @@ import android.widget.TextView;
 
 public class QuestionsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    static RadioButton optionA;
+    static RadioButton optionB;
+    static RadioButton optionC;
+    static RadioButton optionD;
     int clickCounter;
     int selectedOptionId;
-
     TextView selectedOption;
     String selectedOptionText;
-
     TextView username;
     TextView questionNumber;
     TextView questionText;
-
     RadioGroup options;
-
-    RadioButton optionA;
-    RadioButton optionB;
-    RadioButton optionC;
-    RadioButton optionD;
-
     Button continueButton;
     Button submitButton;
 
@@ -42,6 +37,11 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
     Intent intentQuestions;
 
+    public static int getButtonId(RadioButton button) {
+
+        return button.getId();
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +126,6 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
         super.onDestroy();
     }
 
-
     @Override
     public void onClick(View view) {
 
@@ -136,7 +135,8 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionId = options.getCheckedRadioButtonId();
                 selectedOption = (TextView) findViewById(selectedOptionId);
                 selectedOptionText = selectedOption.getText().toString();
-                answerSheet.setAnswers(selectedOptionText, clickCounter);
+                answerSheet.setAnswers(selectedOptionText, clickCounter, selectedOptionId);
+
 
                 options.clearCheck();
                 continueButton.setEnabled(false);
@@ -170,7 +170,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionId = options.getCheckedRadioButtonId();
                 selectedOption = (TextView) findViewById(selectedOptionId);
                 selectedOptionText = selectedOption.getText().toString();
-                answerSheet.setAnswers(selectedOptionText, clickCounter);
+                answerSheet.setAnswers(selectedOptionText, clickCounter, selectedOptionId);
 
                 intentQuestions = new Intent(QuestionsActivity.this, AnswersActivity.class);
                 intentQuestions.putExtra("username", getIntent().getExtras().getString("username"));
@@ -193,4 +193,5 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
         }
     }
+
 }
