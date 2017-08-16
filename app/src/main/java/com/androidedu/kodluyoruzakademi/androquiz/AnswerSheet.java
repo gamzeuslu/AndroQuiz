@@ -17,9 +17,11 @@ class AnswerSheet {
 
     private static boolean[] results = new boolean[5];
 
-    private QuestionsActivity questionsActivity = new QuestionsActivity();
+    //private QuestionsActivity questionsActivity = new QuestionsActivity();
 
     AnswerSheet() {
+
+        QuestionsActivity questionsActivity = new QuestionsActivity();
 
         correctAnswers[0] = questionsActivity.getButtonId(questionsActivity.optionA);
         correctAnswers[1] = questionsActivity.getButtonId(questionsActivity.optionB);
