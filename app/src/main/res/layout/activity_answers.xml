@@ -37,4 +37,16 @@
         android:layout_marginTop="@dimen/fab_margin"
         android:text="@string/answersRetrieved" />
 
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/userAnswersTitle"
+        android:layout_alignRight="@+id/userAnswersTitle"
+        android:layout_below="@+id/userAnswers"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="@string/results" />
+
 </RelativeLayout>

@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 
 
-public class AnswerSheet {
+class AnswerSheet {
 
     private static String[] answerSheet = new String[5];
 
@@ -15,27 +15,43 @@ public class AnswerSheet {
 
     private static int[] correctAnswers = new int[5];
 
-    public AnswerSheet() {
+    private static boolean[] results = new boolean[5];
 
-        correctAnswers[0] = QuestionsActivity.getButtonId(QuestionsActivity.optionA);
-        correctAnswers[1] = QuestionsActivity.getButtonId(QuestionsActivity.optionB);
-        correctAnswers[2] = QuestionsActivity.getButtonId(QuestionsActivity.optionC);
-        correctAnswers[3] = QuestionsActivity.getButtonId(QuestionsActivity.optionD);
-        correctAnswers[4] = QuestionsActivity.getButtonId(QuestionsActivity.optionA);
+    private QuestionsActivity questionsActivity = new QuestionsActivity();
+
+    AnswerSheet() {
+
+        correctAnswers[0] = questionsActivity.getButtonId(questionsActivity.optionA);
+        correctAnswers[1] = questionsActivity.getButtonId(questionsActivity.optionB);
+        correctAnswers[2] = questionsActivity.getButtonId(questionsActivity.optionC);
+        correctAnswers[3] = questionsActivity.getButtonId(questionsActivity.optionD);
+        correctAnswers[4] = questionsActivity.getButtonId(questionsActivity.optionA);
     }
 
 
-    public void setAnswers(String answer, int question, int selectedOption) {
+    void setAnswers(String answer, int question, int selectedOption) {
 
         answerSheet[question] = answer;
         answerIds[question] = selectedOption;
 
     }
 
-    public String getAnswers() {
+    String getAnswers() {
 
         return Arrays.toString(answerSheet);
+
+    }
+
+    String getResults() {
+
+        return Arrays.toString(results);
     }
 
 
+    void checkAnswers() {
+
+        for (int i = 0; i < 5; i++)
+            results[i] = answerIds[i] == correctAnswers[i];
+
+    }
 }

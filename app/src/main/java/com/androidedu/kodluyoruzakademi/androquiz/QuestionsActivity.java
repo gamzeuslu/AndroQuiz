@@ -16,18 +16,23 @@ import android.widget.TextView;
 
 public class QuestionsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    static RadioButton optionA;
-    static RadioButton optionB;
-    static RadioButton optionC;
-    static RadioButton optionD;
     int clickCounter;
     int selectedOptionId;
-    TextView selectedOption;
+
     String selectedOptionText;
+
+    RadioGroup options;
+
+    RadioButton optionA;
+    RadioButton optionB;
+    RadioButton optionC;
+    RadioButton optionD;
+
+    TextView selectedOption;
     TextView username;
     TextView questionNumber;
     TextView questionText;
-    RadioGroup options;
+
     Button continueButton;
     Button submitButton;
 
@@ -37,7 +42,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
 
     Intent intentQuestions;
 
-    public static int getButtonId(RadioButton button) {
+    public int getButtonId(RadioButton button) {
 
         return button.getId();
 
@@ -172,6 +177,8 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionText = selectedOption.getText().toString();
                 answerSheet.setAnswers(selectedOptionText, clickCounter, selectedOptionId);
 
+                answerSheet.checkAnswers();
+
                 intentQuestions = new Intent(QuestionsActivity.this, AnswersActivity.class);
                 intentQuestions.putExtra("username", getIntent().getExtras().getString("username"));
                 startActivity(intentQuestions);
@@ -189,7 +196,6 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 continueButton.setEnabled(true);
 
                 break;
-
 
         }
     }

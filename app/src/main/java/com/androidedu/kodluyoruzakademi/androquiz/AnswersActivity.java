@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 /**
- * Third Activity class where users check their answers.
+ * Third Activity class where users see their results.
  */
 
 public class AnswersActivity extends AppCompatActivity {
@@ -14,6 +14,7 @@ public class AnswersActivity extends AppCompatActivity {
     TextView username;
     TextView answerTitle;
     TextView answersRetrieved;
+    TextView results;
 
     AnswerSheet answerSheet;
 
@@ -27,6 +28,7 @@ public class AnswersActivity extends AppCompatActivity {
         username = (TextView) findViewById(R.id.answersUsernameRetrieved);
         answerTitle = (TextView) findViewById(R.id.userAnswersTitle);
         answersRetrieved = (TextView) findViewById(R.id.userAnswers);
+        results = (TextView) findViewById(R.id.results);
 
         answerSheet = new AnswerSheet();
 
@@ -35,6 +37,8 @@ public class AnswersActivity extends AppCompatActivity {
         username.setText(res.getString(R.string.username, getIntent().getExtras().getString("username")));
         answerTitle.setText(res.getString(R.string.user_answers_title));
         answersRetrieved.setText(res.getString(R.string.answersRetrieved, answerSheet.getAnswers()));
+        results.setText(res.getString(R.string.results, answerSheet.getResults()));
+
 
 
     }
