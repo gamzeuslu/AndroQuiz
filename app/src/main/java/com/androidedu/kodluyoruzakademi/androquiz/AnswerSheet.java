@@ -17,8 +17,6 @@ class AnswerSheet {
 
     private static boolean[] results = new boolean[5];
 
-    //private QuestionsActivity questionsActivity = new QuestionsActivity();
-
     AnswerSheet() {
 
         QuestionsActivity questionsActivity = new QuestionsActivity();
