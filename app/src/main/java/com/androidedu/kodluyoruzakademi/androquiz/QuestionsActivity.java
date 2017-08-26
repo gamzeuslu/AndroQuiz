@@ -36,8 +36,6 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
     Button continueButton;
     Button submitButton;
 
-    AnswerSheet answerSheet;
-
     Resources res;
 
     Intent intentQuestions;
@@ -78,7 +76,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
         submitButton.setOnClickListener(this);
         submitButton.setVisibility(View.GONE);
 
-        answerSheet = new AnswerSheet();
+        AnswerSheet.getNewInstance().init(this);
 
         res = getResources();
 
@@ -140,7 +138,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionId = options.getCheckedRadioButtonId();
                 selectedOption = (TextView) findViewById(selectedOptionId);
                 selectedOptionText = selectedOption.getText().toString();
-                answerSheet.setAnswers(selectedOptionText, clickCounter, selectedOptionId);
+                AnswerSheet.getNewInstance().setAnswers(selectedOptionText, clickCounter, selectedOptionId);
 
 
                 options.clearCheck();
@@ -175,9 +173,9 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionId = options.getCheckedRadioButtonId();
                 selectedOption = (TextView) findViewById(selectedOptionId);
                 selectedOptionText = selectedOption.getText().toString();
-                answerSheet.setAnswers(selectedOptionText, clickCounter, selectedOptionId);
+                AnswerSheet.getNewInstance().setAnswers(selectedOptionText, clickCounter, selectedOptionId);
 
-                answerSheet.checkAnswers();
+                AnswerSheet.getNewInstance().checkAnswers();
 
                 intentQuestions = new Intent(QuestionsActivity.this, AnswersActivity.class);
                 intentQuestions.putExtra("username", getIntent().getExtras().getString("username"));

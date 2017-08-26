@@ -9,6 +9,8 @@ import java.util.Arrays;
 
 class AnswerSheet {
 
+    private static AnswerSheet newInstance;
+
     private static String[] answerSheet = new String[5];
 
     private static int[] answerIds = new int[5];
@@ -17,9 +19,20 @@ class AnswerSheet {
 
     private static boolean[] results = new boolean[5];
 
-    AnswerSheet() {
+    private AnswerSheet() {
+    }
 
-        QuestionsActivity questionsActivity = new QuestionsActivity();
+    static AnswerSheet getNewInstance() {
+
+        if (newInstance == null) {
+
+            newInstance = new AnswerSheet();
+        }
+
+        return newInstance;
+    }
+
+    void init(QuestionsActivity questionsActivity) {
 
         correctAnswers[0] = questionsActivity.getButtonId(questionsActivity.optionA);
         correctAnswers[1] = questionsActivity.getButtonId(questionsActivity.optionB);
@@ -27,7 +40,6 @@ class AnswerSheet {
         correctAnswers[3] = questionsActivity.getButtonId(questionsActivity.optionD);
         correctAnswers[4] = questionsActivity.getButtonId(questionsActivity.optionA);
     }
-
 
     void setAnswers(String answer, int question, int selectedOption) {
 

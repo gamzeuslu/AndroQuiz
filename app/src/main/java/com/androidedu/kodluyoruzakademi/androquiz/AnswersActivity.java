@@ -16,8 +16,6 @@ public class AnswersActivity extends AppCompatActivity {
     TextView answersRetrieved;
     TextView results;
 
-    AnswerSheet answerSheet;
-
     Resources res;
 
     @Override
@@ -30,14 +28,12 @@ public class AnswersActivity extends AppCompatActivity {
         answersRetrieved = (TextView) findViewById(R.id.userAnswers);
         results = (TextView) findViewById(R.id.results);
 
-        answerSheet = new AnswerSheet();
-
         res = getResources();
 
         username.setText(res.getString(R.string.username, getIntent().getExtras().getString("username")));
         answerTitle.setText(res.getString(R.string.user_answers_title));
-        answersRetrieved.setText(res.getString(R.string.answersRetrieved, answerSheet.getAnswers()));
-        results.setText(res.getString(R.string.results, answerSheet.getResults()));
+        answersRetrieved.setText(res.getString(R.string.answersRetrieved, AnswerSheet.getNewInstance().getAnswers()));
+        results.setText(res.getString(R.string.results, AnswerSheet.getNewInstance().getResults()));
 
 
 
