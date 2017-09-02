@@ -28,25 +28,53 @@
         android:text="@string/user_answers_title" />
 
     <TextView
-        android:id="@+id/userAnswers"
-        android:layout_width="350dp"
-        android:layout_height="250dp"
+        android:id="@+id/userAnswer1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/userAnswersTitle"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginStart="@dimen/fab_margin"
         android:layout_marginTop="@dimen/fab_margin"
-        android:text="@string/answersRetrieved" />
+        android:text="@string/answer_one_retrieved" />
 
     <TextView
-        android:id="@+id/results"
+        android:id="@+id/userAnswer2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/userAnswersTitle"
-        android:layout_alignRight="@+id/userAnswersTitle"
-        android:layout_below="@+id/userAnswers"
+        android:layout_height="50dp"
+        android:layout_below="@+id/userAnswer1"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginStart="@dimen/fab_margin"
         android:layout_marginTop="@dimen/fab_margin"
-        android:text="@string/results" />
+        android:text="@string/answer_two_retrieved" />
+
+    <TextView
+        android:id="@+id/userAnswer3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/userAnswer2"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="@string/answer_three_retrieved" />
+
+    <TextView
+        android:id="@+id/userAnswer4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/userAnswer3"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="@string/answer_four_retrieved" />
+
+    <TextView
+        android:id="@+id/userAnswer5"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/userAnswer4"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="@string/answer_five_retrieved" />
 
 </RelativeLayout>

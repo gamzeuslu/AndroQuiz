@@ -138,7 +138,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionId = options.getCheckedRadioButtonId();
                 selectedOption = (TextView) findViewById(selectedOptionId);
                 selectedOptionText = selectedOption.getText().toString();
-                AnswerSheet.getNewInstance().setAnswers(selectedOptionText, clickCounter, selectedOptionId);
+                AnswerSheet.getNewInstance().setAnswer(selectedOptionText, clickCounter, selectedOptionId);
 
 
                 options.clearCheck();
@@ -173,9 +173,7 @@ public class QuestionsActivity extends AppCompatActivity implements View.OnClick
                 selectedOptionId = options.getCheckedRadioButtonId();
                 selectedOption = (TextView) findViewById(selectedOptionId);
                 selectedOptionText = selectedOption.getText().toString();
-                AnswerSheet.getNewInstance().setAnswers(selectedOptionText, clickCounter, selectedOptionId);
-
-                AnswerSheet.getNewInstance().checkAnswers();
+                AnswerSheet.getNewInstance().setAnswer(selectedOptionText, clickCounter, selectedOptionId);
 
                 intentQuestions = new Intent(QuestionsActivity.this, AnswersActivity.class);
                 intentQuestions.putExtra("username", getIntent().getExtras().getString("username"));

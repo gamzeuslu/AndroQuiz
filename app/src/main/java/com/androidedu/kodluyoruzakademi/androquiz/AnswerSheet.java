@@ -1,7 +1,5 @@
 package com.androidedu.kodluyoruzakademi.androquiz;
 
-import java.util.Arrays;
-
 /**
  * This class stores the user's answers as well as the correct answers.
  */
@@ -16,8 +14,6 @@ class AnswerSheet {
     private static int[] answerIds = new int[5];
 
     private static int[] correctAnswers = new int[5];
-
-    private static boolean[] results = new boolean[5];
 
     private AnswerSheet() {
     }
@@ -34,36 +30,39 @@ class AnswerSheet {
 
     void init(QuestionsActivity questionsActivity) {
 
-        correctAnswers[0] = questionsActivity.getButtonId(questionsActivity.optionA);
-        correctAnswers[1] = questionsActivity.getButtonId(questionsActivity.optionB);
-        correctAnswers[2] = questionsActivity.getButtonId(questionsActivity.optionC);
-        correctAnswers[3] = questionsActivity.getButtonId(questionsActivity.optionD);
-        correctAnswers[4] = questionsActivity.getButtonId(questionsActivity.optionA);
+        correctAnswers[0] = questionsActivity.getButtonId(questionsActivity.optionC);
+        correctAnswers[1] = questionsActivity.getButtonId(questionsActivity.optionD);
+        correctAnswers[2] = questionsActivity.getButtonId(questionsActivity.optionB);
+        correctAnswers[3] = questionsActivity.getButtonId(questionsActivity.optionA);
+        correctAnswers[4] = questionsActivity.getButtonId(questionsActivity.optionC);
     }
 
-    void setAnswers(String answer, int question, int selectedOption) {
+    void setAnswer(String answer, int question, int selectedOption) {
 
         answerSheet[question] = answer;
         answerIds[question] = selectedOption;
 
     }
 
-    String getAnswers() {
+    String getAnswer(int question) {
 
-        return Arrays.toString(answerSheet);
+        return answerSheet[question];
 
     }
 
-    String getResults() {
 
-        return Arrays.toString(results);
-    }
+    String checkAnswer(int answer) {
 
+        String result;
 
-    void checkAnswers() {
+        boolean flag = answerIds[answer] == correctAnswers[answer];
 
-        for (int i = 0; i < 5; i++)
-            results[i] = answerIds[i] == correctAnswers[i];
+        if (flag)
+            result = "DOĞRU";
+        else
+            result = "YANLIŞ";
+
+        return result;
 
     }
 }
